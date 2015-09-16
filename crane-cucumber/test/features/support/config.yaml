@@ -1,0 +1,5 @@
+ci:
+ base_url:
+
+metadata:
+ json: /etc/crane-cucumber
