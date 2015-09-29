@@ -1,5 +1,5 @@
 ci:
- base_url: http://crane-ci.usersys.redhat.com
+ base_url:
 
 metadata:
  json: /home/randalap/tmp/repos
