@@ -29,8 +29,17 @@ module CraneApiTests
     def get_data(sub_url)
       @memcached.with do|site|
         @log.info 'sub-url: '+sub_url
-        response = site[sub_url].get :accept=>'application/json'
-        return response
+        begin
+          response = site[sub_url].get(:accept=>'application/json')
+          return response
+        rescue => e
+          @log.info ('error response received: ['+e.response+']')
+          return e.response
+        end
+
+
+
+
       end
     end
 
