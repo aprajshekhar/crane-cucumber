@@ -7,6 +7,7 @@ class Configuration
 
   def self.load name
     @@config = nil
+    p "config path: " + ENV['CONFIG_FILE'] + "/support/config.yaml"
     io = ENV['CONFIG_FILE'] || File.open( File.dirname(__dir__) + "/support/config.yaml" )
     YAML::load_documents(io) { |doc| @@config = doc[name] }
     raise "Could not locate a configuration named \"#{name}\"" unless @@config
